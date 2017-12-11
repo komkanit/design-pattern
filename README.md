@@ -3,10 +3,16 @@ Used of Software engineer final test.
 
 ## Note
 
+### adapter pattern
+ตามหลักแล้วถ้าเราจะใช้ปลั๊กไฟแบบบ้านเราไปต่อต่างประเทศนั้น เราก็ต้องผ่าน
+Adapter ตัวนึงก่อนที่เข้ากับของเราได้ เพื่อไปใช้กับปลั๊กประเทศนั้นๆ
+เป็นการเปรียบเทียบกับ interface ของฝั่ง client request ไปที่ ITarget
+และต้องมี Adapter มาอีกต่อนึง โดย Adapter จะเรียกใช้ Adaptee เพื่อร้องขอ
+SpecificationRequest อีกทีหนึ่ง
 ### Strategy Pattern
 
 แยก behaviour ออกจาก class แม่
-เพื่อไม่ให้มีผลกระทบกับ class ลูกเสมอไป	
+เพื่อไม่ให้มีผลกระทบกับ class ลูกเสมอไป
 behaviour ที่แยกออกมาเรียกว่า strategy
 
 composition vs inheritance
@@ -14,7 +20,7 @@ composition vs inheritance
 inheritance สิ่งหนึ่งเป็นอีกสิ่งหนึ่ง คือการสืบทอดพฤติกรรมต่อจากแม่ให้ลูก
 
 composition สิ่งหนึ่งมีอีกสิ่งหนึ่ง คือการใส่พฤติกรรมให้ class
- 
+
 *** ทั้งสองสิ่งไม่ได้แยกจากกันโดยสมบูรณ์ สามารถใช้เสริมกันได้
 
 ตัวอย่างในไฟล์ strategy.java คือเราสร้าง class ชื่อ context เป็นตัวรับ behavior
@@ -112,7 +118,7 @@ Inside Square::draw() method.
 ```
 
 ### Abstract Factory Pattern
-คล้ายกับ Factory Pattern แต่จะมีตัวที่สร้างโรงงานขึ้นมาอีกทีนั่นคือ `FactoryProducer` และแต่ละโรงงานก็จะมีโครงสร้างเหมือนกับ Factory Pattern การสร้างobjectนั่นเปลี่ยนจากการสร้างผ่าน factory เป็นติดต่อผ่าน `AbstractFactory`แทน ทำให้สามารถเพิ่มเติมหรือแก้ไขfactoryในภายหลังได้ 
+คล้ายกับ Factory Pattern แต่จะมีตัวที่สร้างโรงงานขึ้นมาอีกทีนั่นคือ `FactoryProducer` และแต่ละโรงงานก็จะมีโครงสร้างเหมือนกับ Factory Pattern การสร้างobjectนั่นเปลี่ยนจากการสร้างผ่าน factory เป็นติดต่อผ่าน `AbstractFactory`แทน ทำให้สามารถเพิ่มเติมหรือแก้ไขfactoryในภายหลังได้
 https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
 ```
 output
@@ -172,11 +178,11 @@ proxy หมายความว่า ผู้แทน ดังนั้น
 ### Structural Patterns
 path นี้จะเป็นการเปรียบเทียบระหว่าง
 ##### 1.Decorator Pattern
-    เปลี่ยน behavior คือไม่ได้เปลี่ยน interface แต่เปลี่ยน implementation พยายามจะ solve ปัญหาโดยการที่พยายามจะ compose ยังไงก็ได้แล้วแต่เรา ทำการ decorating ทุก component 
+    เปลี่ยน behavior คือไม่ได้เปลี่ยน interface แต่เปลี่ยน implementation พยายามจะ solve ปัญหาโดยการที่พยายามจะ compose ยังไงก็ได้แล้วแต่เรา ทำการ decorating ทุก component
 ##### 2.Adapter Pattern
     เราเปลี่ยนแปลงไปโดยที่ไม่สน behavior คือเปลี่ยน interface ที่เราอยากใช้ ให้เข้ากับ interface ของเรา
 ##### 3.Facade Pattern
-    ตัว facal จะเป็นตัว higher level interface ที่เอาไว้ให้เราใช้พวกที่ต่ำกว่านี้ ที่ซับซ้อนมากๆ ได้ง่ายขึ้น 
+    ตัว facal จะเป็นตัว higher level interface ที่เอาไว้ให้เราใช้พวกที่ต่ำกว่านี้ ที่ซับซ้อนมากๆ ได้ง่ายขึ้น
 ##### 4.Proxy Pattern
     ตัว proxy จะเป็นตัวติดต่อกับ client แล้วค่อยส่งไปให้ real คือทำอะไรต้องผ่าน proxy ก่อน แต่ว่าทั้ง 2 อย่่างจะใช้ subject ร่วมกัน คือบาง common answer ทาง real ก็จะสามารถใช้ได้โดยตรง proxy เหมือนเป็น control access เปลี่ยน implementation แต่ interface ของ real กับ proxy เหมือนกัน
 ##### 5.Bridge Pattern
