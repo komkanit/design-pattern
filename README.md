@@ -56,9 +56,24 @@ https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
 Hello World, This is singleton pattern.
 ```
 
+### Factory Pattern
+Factory Pattern คือรูปแบบที่จำลองโรงงานสร้างของขึ้นมา โดยที่เราสามารถสั่งสร้างของได้โดยไม่ต้องสนใจโลจิกการสร้างของในfactory ทำให้ง่ายต่อการสร้างobject
+เนื้อหาจากไฟล์
+1. สร้าง interface `Shape.java` และสร้างคลาสobjectที่จะสร้างขึ้นมา `Circle.java ,Rectangle.java ,Square.java` ให้object ทุกตัว implements Shape
+2. สร้าง factory `ShapeFactory.java` factoryจะเป็นตัวสร้างobjectทั้ง3ตัวโดยจะรับargumentเป็นเงื่อนไขการสร้าง
+3. สร้าง FactoryPatternDemo `FactoryPatternDemo.java` เมื่อต้องการจะใช้objectไหนก็สั่งสร้างผ่าน ShapeFactory และนำไปใช้ได้เลย
+https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
+```
+output
+Inside Circle::draw() method.
+Inside Rectangle::draw() method.
+Inside Square::draw() method.
+```
+
 ### Facade Pattern
 Facade Pattern คือ pattern ที่ช่วยลดความซับซ้อนของระบบ และหน้า interface ของ client โดยนำระบบย่อยมารวมใน class เดียว แล้วให้ client เรียกใช้ class นั้นเพียง class เดียว (source: http://enos.itcollege.ee/~jpoial/java/naited/Java-Design-Patterns.pdf)
 
 1. ไฟล์ `Runserver.java` แสดงให้เห็นว่่าหากไม่นำ Facade Pattern มาใช้ client ต้องรันคำสั่งมากมายเพื่อ start/stop server
 2. ไฟล์ `ScheduleServerFacade.java` รวมคำสั่งที่ต้องรันเพื่อ start/stop server ไว้ในคำสั่งเดียว
 3. ไฟล์ `TestFacade.java` หน้า interface ของ user เหลือเพียงแค่คำสั่ง start/stop server
+
