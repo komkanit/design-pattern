@@ -63,6 +63,7 @@ Shape: Rectangle
 Border Color: Red
 ```
 
+
 ### Bridge Pattern
 คือ แนวคิดในการยืมความสามารถจาก Class ภายนอกมาใช้งาน ใช้สำหรับแก้ปัญหาการ couple ระหว่าง abstraction กับ implementation โดย class หลักที่เราจะใช้งานจะถูกเรียกว่า Abstraction และ class ที่เราจะยืมความสามารถมาจะเรียกว่า Implementor วิธีนี้แก้คือเราสร้าง abstraction ขึ้นมาคั่น ระหว่าง target กับ client เพื่อให้ client เห็นแค่ abstraction อันใหม่ จากนั้นเราจะแก้ abstraction นี้ยังไงก็ได้ โดยการแก้นั้นจะไม่ส่งผลกระทบอะไรกับ target (ดูความสัมพันธ์ในลิ้งด้านล่างแบบเห็นละรู้เลย)
 เนื้อหาในโค้ดคร่าวๆ
@@ -130,3 +131,18 @@ proxy หมายความว่า ผู้แทน ดังนั้น
 ในตัวอย่าง proxy.java จะเป็นการสร้าง RealImage กับ ProxyImage ที่ inherit มาจาก RealImage
 ใน main เราประกาศ class ProxyImage ซึ่งจะมีการ load ข้อมูลจาก disk แค่ครั้งแรกที่ display
 รอบถัดไปจะไม่ต้องโหลดมาใหม่อีก
+
+
+### Structural Patterns
+path นี้จะเป็นการเปรียบเทียบระหว่าง
+##### 1.Decorator Pattern
+    เปลี่ยน behavior คือไม่ได้เปลี่ยน interface แต่เปลี่ยน implementation พยายามจะ solve ปัญหาโดยการที่พยายามจะ compose ยังไงก็ได้แล้วแต่เรา ทำการ decorating ทุก component 
+##### 2.Adapter Pattern
+    เราเปลี่ยนแปลงไปโดยที่ไม่สน behavior คือเปลี่ยน interface ที่เราอยากใช้ ให้เข้ากับ interface ของเรา
+##### 3.Facade Pattern
+    ตัว facal จะเป็นตัว higher level interface ที่เอาไว้ให้เราใช้พวกที่ต่ำกว่านี้ ที่ซับซ้อนมากๆ ได้ง่ายขึ้น 
+##### 4.Proxy Pattern
+    ตัว proxy จะเป็นตัวติดต่อกับ client แล้วค่อยส่งไปให้ real คือทำอะไรต้องผ่าน proxy ก่อน แต่ว่าทั้ง 2 อย่่างจะใช้ subject ร่วมกัน คือบาง common answer ทาง real ก็จะสามารถใช้ได้โดยตรง proxy เหมือนเป็น control access เปลี่ยน implementation แต่ interface ของ real กับ proxy เหมือนกัน
+##### 5.Bridge Pattern
+    ตัวอย่างเช่นการที่เรามี 2 hierarchy ที่เหมือนๆกัน คนละ interface กัน เรียกว่า bridge เพราะมันคือการ bridge ข้ามไปอีก interface นึง ค่อนข้างจะ flexible
+
