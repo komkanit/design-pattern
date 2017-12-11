@@ -22,3 +22,5 @@
 hs_err_pid*
 /singleton/nbproject/private/
 /singleton/build/
+/command/nbproject/private/
+/command/build/
