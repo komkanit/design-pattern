@@ -1,4 +1,4 @@
-Class Adapter ITarget {
+public class Adapter ITarget {
     Adaptee adaptee;
     public Adapter(Adaptee a) {
         this.adaptee = a;
@@ -9,7 +9,7 @@ Class Adapter ITarget {
     }
 }
 
-Class Adaptee {
+public class Adaptee {
     public void specificRequest(){
         // Code for some specific request.
     }
