@@ -3,6 +3,24 @@ Used of Software engineer final test.
 
 ## Note
 
+### Strategy Pattern
+
+แยก behaviour ออกจาก class แม่
+เพื่อไม่ให้มีผลกระทบกับ class ลูกเสมอไป	
+behaviour ที่แยกออกมาเรียกว่า strategy
+
+composition vs inheritance
+
+inheritance สิ่งหนึ่งเป็นอีกสิ่งหนึ่ง คือการสืบทอดพฤติกรรมต่อจากแม่ให้ลูก
+
+composition สิ่งหนึ่งมีอีกสิ่งหนึ่ง คือการใส่พฤติกรรมให้ class
+ 
+*** ทั้งสองสิ่งไม่ได้แยกจากกันโดยสมบูรณ์ สามารถใช้เสริมกันได้
+
+ตัวอย่างในไฟล์ strategy.java คือเราสร้าง class ชื่อ context เป็นตัวรับ behavior
+โดยที่มี strategy 3 อย่างคือ +, -, *
+แล้วเลือกว่าตอนเรียกใช้ context จะใส่ behaivior ไหนเข้าไป คือเราสามารถเปลี่ยนความสามารถของ class ในตอนที่ run time ได้
+
 ### Observer Pattern
 เป็น Pattern ที่เชื่อมโยง Object กันแบบ One-to-Many เมื่อ​ Subject มีการเปลี่ยนแปลง เหล่า Observer ทั้งหลายที่ Subscribe ก็จะรับรู้การเปลี่ยนแปลงนั้น เหมือนเป็น เหมือนเป็น Hub ข้อมูลกลาง และส่งข้อมูลใหเ Object อื่นๆใช้
 https://www.algorithmtut.com/algorithm-observer-design-pattern/
@@ -64,3 +82,35 @@ Drawing Circle[  color: green, radius: 10, x: 100, 100]
 อ้างอิงจาก https://2bedev.com/365days-of-program-day-53/ มีตัวอย่างที่คิดว่าสรุปแล้วเห็นภาพเลยอยู่ด้านล่างเว็บนี้ด้วย
 https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm คำอธิบายโค้ดอยู่ในนี้
 
+
+### Singleton Pattern
+เป็น Pattern ที่จำกัดจำนวนของ Object ที่ถูกสร้างขึ้นในระบบ ซึ่งจะเป็นประโยชน์เมื่อระบบต้องการจะมี Object นั้นเพียงตัวเดียวเพื่อป้องกันไม่ให้เกิดการทำงานซ้ำซ้อนกันเช่น class สำหรับการเก็บข้อมูล หรือเป็น Model ที่มีการเรียกใช้งานทั้งระบบ
+https://medium.com/20scoops-cnx/singleton-pattern-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3-b7b28182654f
+https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
+เนื้อหาโค้ดคร่าวๆ
+1. ไฟล์ `SingleObject` ในไฟล์จะมีตัวแปร `instance` เป็นตัวแปรแบบ static และจะอนุญาติให้สร้าง object ได้จากการ `getInstance()` เท่านั้น และ object นี้สามารถถูกสร้างได้แค่ครั้งเดียวจากการเช็คใน `getInstance` ว่าเคยถูกสร้างหรือยัง
+2. ไฟล์ `SingletonDemo` เป็นไฟล์ main ของโปรแกรม จะแสดงข้อความ
+```
+Hello World, This is singleton pattern.
+```
+
+### Factory Pattern
+Factory Pattern คือรูปแบบที่จำลองโรงงานสร้างของขึ้นมา โดยที่เราสามารถสั่งสร้างของได้โดยไม่ต้องสนใจโลจิกการสร้างของในfactory ทำให้ง่ายต่อการสร้างobject
+เนื้อหาจากไฟล์
+1. สร้าง interface `Shape.java` และสร้างคลาสobjectที่จะสร้างขึ้นมา `Circle.java ,Rectangle.java ,Square.java` ให้object ทุกตัว implements Shape
+2. สร้าง factory `ShapeFactory.java` factoryจะเป็นตัวสร้างobjectทั้ง3ตัวโดยจะรับargumentเป็นเงื่อนไขการสร้าง
+3. สร้าง FactoryPatternDemo `FactoryPatternDemo.java` เมื่อต้องการจะใช้objectไหนก็สั่งสร้างผ่าน ShapeFactory และนำไปใช้ได้เลย
+https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
+```
+output
+Inside Circle::draw() method.
+Inside Rectangle::draw() method.
+Inside Square::draw() method.
+```
+
+### Facade Pattern
+Facade Pattern คือ pattern ที่ช่วยลดความซับซ้อนของระบบ และหน้า interface ของ client โดยนำระบบย่อยมารวมใน class เดียว แล้วให้ client เรียกใช้ class นั้นเพียง class เดียว (source: http://enos.itcollege.ee/~jpoial/java/naited/Java-Design-Patterns.pdf)
+
+1. ไฟล์ `Runserver.java` แสดงให้เห็นว่่าหากไม่นำ Facade Pattern มาใช้ client ต้องรันคำสั่งมากมายเพื่อ start/stop server
+2. ไฟล์ `ScheduleServerFacade.java` รวมคำสั่งที่ต้องรันเพื่อ start/stop server ไว้ในคำสั่งเดียว
+3. ไฟล์ `TestFacade.java` หน้า interface ของ user เหลือเพียงแค่คำสั่ง start/stop server
