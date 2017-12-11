@@ -111,6 +111,20 @@ Inside Rectangle::draw() method.
 Inside Square::draw() method.
 ```
 
+### Abstract Factory Pattern
+คล้ายกับ Factory Pattern แต่จะมีตัวที่สร้างโรงงานขึ้นมาอีกทีนั่นคือ `FactoryProducer` และแต่ละโรงงานก็จะมีโครงสร้างเหมือนกับ Factory Pattern การสร้างobjectนั่นเปลี่ยนจากการสร้างผ่าน factory เป็นติดต่อผ่าน `AbstractFactory`แทน ทำให้สามารถเพิ่มเติมหรือแก้ไขfactoryในภายหลังได้ 
+https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
+```
+output
+Inside Circle::draw() method.
+Inside Rectangle::draw() method.
+Inside Square::draw() method.
+Inside Red::fill() method.
+Inside Green::fill() method.
+Inside Blue::fill() method.
+```
+
+
 ### Facade Pattern
 Facade Pattern คือ pattern ที่ช่วยลดความซับซ้อนของระบบ และหน้า interface ของ client โดยนำระบบย่อยมารวมใน class เดียว แล้วให้ client เรียกใช้ class นั้นเพียง class เดียว (source: http://enos.itcollege.ee/~jpoial/java/naited/Java-Design-Patterns.pdf)
 
