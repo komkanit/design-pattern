@@ -44,3 +44,12 @@ Rectangle of red border
 Shape: Rectangle
 Border Color: Red
 ```
+
+
+### Structural Patterns
+path นี้จะเป็นการเปรียบเทียบระหว่าง
+- Decorator Pattern
+- Adapter Pattern
+- Facade Pattern
+- Proxy Pattern
+- Bridge Pattern
