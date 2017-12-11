@@ -45,7 +45,6 @@ Shape: Rectangle
 Border Color: Red
 ```
 
-
 ### Singleton Pattern
 เป็น Pattern ที่จำกัดจำนวนของ Object ที่ถูกสร้างขึ้นในระบบ ซึ่งจะเป็นประโยชน์เมื่อระบบต้องการจะมี Object นั้นเพียงตัวเดียวเพื่อป้องกันไม่ให้เกิดการทำงานซ้ำซ้อนกันเช่น class สำหรับการเก็บข้อมูล หรือเป็น Model ที่มีการเรียกใช้งานทั้งระบบ
 https://medium.com/20scoops-cnx/singleton-pattern-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3-b7b28182654f
@@ -56,3 +55,10 @@ https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
 ```
 Hello World, This is singleton pattern.
 ```
+
+### Facade Pattern
+Facade Pattern คือ pattern ที่ช่วยลดความซับซ้อนของระบบ และหน้า interface ของ client โดยนำระบบย่อยมารวมใน class เดียว แล้วให้ client เรียกใช้ class นั้นเพียง class เดียว (source: http://enos.itcollege.ee/~jpoial/java/naited/Java-Design-Patterns.pdf)
+
+1. ไฟล์ `Runserver.java` แสดงให้เห็นว่่าหากไม่นำ Facade Pattern มาใช้ client ต้องรันคำสั่งมากมายเพื่อ start/stop server
+2. ไฟล์ `ScheduleServerFacade.java` รวมคำสั่งที่ต้องรันเพื่อ start/stop server ไว้ในคำสั่งเดียว
+3. ไฟล์ `TestFacade.java` หน้า interface ของ user เหลือเพียงแค่คำสั่ง start/stop server
