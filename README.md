@@ -24,3 +24,12 @@ Binary String: 1010
 
 ### Decorator Pattern
 Decorator Pattern คือรูปแบบที่ช่วยให้เราสามารถเพิ่มเติม state และ พฤติกรรมใหม่ เข้าไปใน object แบบ dynamic ได้ นั่นคือการที่เราสามารถเพิ่ม state และ พฤติกรรมใหม่ เช่นนี้เข้าไปได้ เราจึงไม่จำเป็นต้องกลับไปแก้ไข code method หรือ state ของ object เดิมเลย
+
+### Factory Pattern
+Factory Pattern คือรูปแบบที่จำลองโรงงานสร้างของขึ้นมา โดยที่เราสามารถสั่งสร้างของได้โดยไม่ต้องสนใจโลจิกการสร้างของในfactory ทำให้ง่ายต่อการสร้างobject
+เนื้อหาจากไฟล์
+1. สร้าง interface `Shape.java` และสร้างคลาสobjectที่จะสร้างขึ้นมา `Circle.java ,Rectangle.java ,Square.java` ให้object ทุกตัว implements Shape
+2. สร้าง factory `ShapeFactory.java` factoryจะเป็นตัวสร้างobjectทั้ง3ตัวโดยจะรับargumentเป็นเงื่อนไขการสร้าง
+3. สร้าง FactoryPatternDemo `FactoryPatternDemo.java` เมื่อต้องการจะใช้objectไหนก็สั่งสร้างผ่าน `ShapeFactory.java`และนำไปใช้ได้เลย
+
+
